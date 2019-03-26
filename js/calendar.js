@@ -66,6 +66,7 @@ Calendar.prototype.show = function() {
 		fragment.appendChild(li);
 	}
 	elemUl.appendChild(fragment);
+	this.dateTitle.innerHTML = this.title;
 	this.select();
 }
 
@@ -120,7 +121,8 @@ Calendar.prototype.select = function() {
 			this.classList.add('active');
 			that.dateTitle.innerHTML = that.title;
 			that.outputTime.innerHTML = '';
-			that.outputTime.appendChild(document.createTextNode(that.title + that.selectDate))
+			// 这里单纯的只是为了试用createTextNode()
+			that.outputTime.appendChild(document.createTextNode(that.title + that.selectDate));
 			that.index = i;
 		});
 	}
